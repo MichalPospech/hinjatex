@@ -39,6 +39,7 @@ executable hinjatex
                       ginger, 
                       optparse-applicative, 
                       lens-aeson, 
-                      lens
+                      lens,
+                      either
     hs-source-dirs:   app
     default-language: Haskell2010
