@@ -5,6 +5,7 @@ module Main where
 import Options.Applicative (argument, execParser, fullDesc, help, info, metavar, progDesc, str)
 import Options.Applicative.Common (runParser)
 import Options.Applicative.Types (Parser)
+import JinjaParser (jinjaParser)
 
 data Arguments = Arguments
   { json :: String,
@@ -27,4 +28,5 @@ main :: IO ()
 main = do
   args <- execParser $ info parser fullDesc
   jsonData <- readFile $ json args
-  return ()
+  template <- jinjaParser $ latex args
+  print template
